@@ -1,0 +1,62 @@
+cid,cname,uid,createdDate,type,link,platform,UpvCount,free
+,Python for Everybody Specialization,,,Python,https://www.coursera.org/specializations/python,Coursera,,0
+,Programming for Everybody (Getting Started with Python),,,Python,https://www.coursera.org/learn/python,Coursera,,0
+,Python Data Structures,,,Python,https://www.coursera.org/learn/python-data,Coursera,,0
+,Applied Data Science with Python Specialization,,,Python,https://www.coursera.org/specializations/data-science-python,Coursera,,0
+,Introduction to Data Science in Python,,,Python,https://www.coursera.org/learn/python-data-analysis,Coursera,,0
+,Python 3 Programming Specialization,,,Python,https://www.coursera.org/specializations/python-3-programming,Coursera,,0
+,Using Python to Access Web Data,,,Python,https://www.coursera.org/learn/python-network-data,Coursera,,0
+,Python for Data Science,,,Python,https://www.coursera.org/learn/python-for-applied-data-science,Coursera,,0
+,Machine Learning with Python,,,Machine Learning,https://www.coursera.org/learn/machine-learning-with-python,Coursera,,0
+,Using Databases with Python,,,Python,https://www.coursera.org/learn/python-databases,Coursera,,0
+,Build Native Mobile Apps with Flutter,,,Flutter,https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905,Udacity,,0
+,Flutter by Google,,,Flutter,https://www.youtube.com/watch?v=fq4N0hgOWzU&list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr,Youtube,,1
+,Flutter tutorial for beginners using dart,,,Flutter,https://www.youtube.com/playlist?list=PLlxmoA0rQ-Lw6tAs2fGFuXGP13-dWdKsB,Youtube,,1
+,Flutter tutorials,,,Flutter,https://www.youtube.com/watch?v=b2fgMCeSNpY&list=PLJbE2Yu2zumDqr_-hqpAN0nIr6m14TAsd,Youtube,,1
+,C++ Nanodegree,,,C++,https://www.udacity.com/course/c-plus-plus-nanodegree--nd213,Udacity,,0
+,C++ For C Programmers,,,C++,https://www.coursera.org/learn/c-plus-plus-a,Udacity,,0
+,C++ Tutorial for Beginners - Full Course,,,C++,https://www.coursera.org/courses?query=c%2B%2B&,Coursera,,0
+,Intro to HTML and CSS,,,Web Development,https://www.udacity.com/course/intro-to-html-and-css--ud001,Udacity,,
+,Intro to JavaScript,,,Web Development,https://www.udacity.com/course/intro-to-javascript--ud803,Udacity,,
+,Ruby on Rails Web Development Specialization,,,Web Development,https://www.coursera.org/specializations/ruby-on-rails,Coursera,,
+,Web Development In 2019 - A Practical Guide,,,Web Development,https://www.youtube.com/watch?v=UnTQVlqmDQ0,Youtube,,
+,Data Analysis and Visualization,,,Data Analysis,https://www.udacity.com/course/data-analysis-and-visualization--ud404,Udacity,,
+,The Arduino Platform and C Programming,,,C,https://www.coursera.org/learn/arduino-platform,Coursera,,
+,Introduction to Computer Programming,,,C,https://www.coursera.org/learn/introduction-to-computer-programming,Coursera,,
+,C Programming Tutorial,,,C,https://www.youtube.com/watch?v=-CpG3oATGIs,Youtube,,
+,Java Programming Basics,,,Java,https://www.udacity.com/course/java-programming-basics--ud282,Udacity,,
+,Android Basics: User Interface,,,Java,https://www.udacity.com/course/android-basics-user-interface--ud834,Udacity,,
+,Java Programming and Software Engineering Fundamentals Specialization,,,Java,https://www.coursera.org/specializations/java-programming,Coursera,,
+,Object Oriented Programming in Java Specialization,,,Java,https://www.coursera.org/specializations/object-oriented-programming,Coursera,,
+,Learn Java 8,,,Java,https://www.youtube.com/watch?v=grEKMHGYyns,Youtube,,
+,Java Tutorial for Beginners,,,Java,https://www.youtube.com/watch?v=3u1fu6f8Hto,Youtube,,
+,Kotlin Bootcamp for Programmers,,,Kotlin,https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011,Udacity,,
+,Kotlin for Android Developers,,,Kotlin,https://www.udacity.com/course/kotlin-for-android-developers--ud888,Udacity,,
+,Kotlin Programming for Android,,,Kotlin,https://www.youtube.com/watch?v=VEqhzCFmEQI&list=PLlxmoA0rQ-LwgK1JsnMsakYNACYGa1cjR,Youtube,,
+,Python Django Web Framework,,,Web Development,https://www.youtube.com/watch?v=F5mRW0jo-U4,Youtube,,
+,Intro to Machine Learning,,,Machine Learning,https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t,Udacity,,
+,Become a Self Driving Car Engineer,,,Machine Learning,https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013,Udacity,,
+,Intro to Machine Learning,,,Machine Learning,https://www.udacity.com/course/intro-to-machine-learning--ud120,Udacity,,
+,Machine Learning,,,Machine Learning,https://www.udacity.com/course/machine-learning--ud262,Udacity,,
+,Introduction to Computer Vision,,,Machine Learning,https://www.udacity.com/course/introduction-to-computer-vision--ud810,Udacity,,
+,Intro to Artificial Intelligence,,,Machine Learning,https://www.udacity.com/course/intro-to-artificial-intelligence--cs271,Udacity,,
+,Machine Learning,,,Machine Learning,https://www.coursera.org/learn/machine-learning,Coursera,,
+,"Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",,,Machine Learning,https://www.coursera.org/learn/introduction-tensorflow,Coursera,,
+,Machine Learning Tutorial,,,Machine Learning,https://www.youtube.com/watch?v=DWsJc1xnOZo,Youtube,,
+,Complete Machine Learning Course,,,Machine Learning,https://www.youtube.com/watch?v=b2q5OFtxm6A,Youtube,,
+,Intro to Data Analysis,,,Data Analysis,https://www.udacity.com/course/intro-to-data-analysis--ud170,Udacity,,
+,SQL for Data Analysis,,,Data Analysis,https://www.udacity.com/course/sql-for-data-analysis--ud198,Udacity,,
+,Data Analysis with R,,,Data Analysis,https://www.udacity.com/course/sql-for-data-analysis--ud198,Udacity,,
+,Data Analysis and Presentation Skills,,,Data Analysis,https://www.coursera.org/specializations/pwc-analytics,Coursera,,
+,Data Analytics for Beginners,,,Data Analysis,https://www.youtube.com/watch?v=THODdNXOjRw,Youtube,,
+,"Intro to Data Analysis / Visualization with Python, Matplotlib and Pandas",,,Data Analysis,https://www.youtube.com/watch?v=a9UrKTVEeZA,Youtube,,
+,HTML5 Canvas,,,Web Development,https://www.udacity.com/course/html5-canvas--ud292,Udacity,,
+,"Excel Data Analysis: Sort, Filter, PivotTable, Formulas",,,Data Analysis,https://www.youtube.com/watch?v=i5WiYh2jmG8,Youtube,,
+,Introduction to .NET,,,.NET,https://www.youtube.com/watch?v=0u9k-kOR3KE&list=PLVlQHNRLflP-jc5Fbhfdhzv52AWYq836j,Youtube,,
+,Build a C# .NET Application in 60 Minutes,,,.NET,https://www.youtube.com/watch?v=GcFJjpMFJvI,Youtube,,
+,Introduction to Virtual Reality,,,VR,https://www.udacity.com/course/introduction-to-virtual-reality--ud1012,Udacity,,
+,Learn ARKit using Unity,,,VR,https://www.udacity.com/course/learn-arkit-using-unity--ud114,Udacity,,
+,Unity beginner tutroial,,,Unity,https://www.youtube.com/watch?v=j48LtUkZRjU&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6,Youtube,,
+,Learn how to build games in Unity,,,Unity,https://unity3d.com/learn/beginner-tutorials,unity3d.com,,
+,"HTML, CSS, JavaScript and PHP",,,Web Development,https://www.w3schools.com/,w3schools.com,,
+,Intermediate Python for Data Science,,,Python,https://www.datacamp.com/courses/intermediate-python-for-data-science,DataCamp,,
