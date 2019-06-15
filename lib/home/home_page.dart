@@ -39,10 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Widget CourseCards (List<String> itemList){
       return GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           children: List.generate(itemList.length, (index) {
             return Card(
-              color: Colors.grey,
+              color: Colors.black,
               child:
 
               Align(
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child:Text(
                         itemList[index],
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 12.0),
+                        style: TextStyle(fontSize: 12.0, color: Colors.white),
                       ))
               )
               ,
@@ -90,13 +90,12 @@ class _MyHomePageState extends State<MyHomePage> {
       "Applied Data Science with Python Specialization",
       "Introduction to Data Science in Python",
       "Python 3 Programming Specialization",
-      "Hitchiker's guide to Python"
     ];
 
     return Scaffold(
         appBar: topBar,
         body: Padding(
             padding: EdgeInsets.all(15.0),
-            child: TitleCourseCards("Python programming", itemList)));
+            child: TitleCourseCards("Recommendations for you", itemList)));
   }
 }
