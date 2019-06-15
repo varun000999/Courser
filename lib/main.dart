@@ -94,14 +94,16 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontFamily: "Roboto",
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0),)),
+                    SizedBox(height: 10.0,),
                     new Expanded(
                         child: GridView.count(
                             crossAxisCount: 3,
                             children: List.generate(6, (index) {
-                              return Card(color: Colors.grey,);
+                              return Card(color: Colors.grey, child: Column(children: <Widget>[SizedBox(height: 60.0,), Text("Python programming for noobs", textAlign: TextAlign.center, style: TextStyle(fontSize: 12.0),)],));
                             })
                         )
                     ),
+
 
                   ]))
             ])));
