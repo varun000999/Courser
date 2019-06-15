@@ -47,53 +47,63 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget _getListItemUI(BuildContext context, int index) {
       return new Card(
           child: new Column(
-            children: <Widget>[
-              new ListTile(
-                title: new Text(
-                  "Python Programming",
-                  style: new TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
-                ),
-                subtitle: new Column(
-                   children :<Widget>[Text("Platform", style: TextStyle(fontSize:9.0))],
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                new ListTile(
+                    title: new Text(
+                      "Python Programming",
+                      style: new TextStyle(
+                          fontSize: 14.0, fontWeight: FontWeight.bold),
                     ),
-                onTap: () {}
-      )]));
+                    subtitle: new Column(
+                      children: <Widget>[
+                        Text("Platform", style: TextStyle(fontSize: 9.0))
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    ),
+                    onTap: () {}
+                )
+              ]));
     }
 
 
     final gridItem = new Card(
-        child: new Column(
+      child: new Column(
           children: <Widget>[
             new Container(
               color: Colors.red,
             )
           ]
-        ),
-      );
+      ),
+    );
 
 
     return Scaffold(
         appBar: topBar,
         body:
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-        child:Row(children: <Widget>[
+        Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Row(children: <Widget>[
               new Expanded(child:
-        Column(
+              Column(
 
-        children:<Widget>[
-          SizedBox(height:10.0),
-        Align(alignment: Alignment.centerLeft, child:Text("Python", style: TextStyle(fontFamily: "Roboto", fontWeight:FontWeight.bold, fontSize: 24.0),)),
-        new Expanded(
-          child:GridView.count(
-            crossAxisCount: 3,
-            children: List.generate(6, (index){
-              return Card(color: Colors.grey,);})
-        )
-    ),
+                  children: <Widget>[
+                    SizedBox(height: 10.0),
+                    Align(alignment: Alignment.centerLeft,
+                        child: Text("Python", style: TextStyle(
+                            fontFamily: "Roboto",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0),)),
+                    new Expanded(
+                        child: GridView.count(
+                            crossAxisCount: 3,
+                            children: List.generate(6, (index) {
+                              return Card(color: Colors.grey,);
+                            })
+                        )
+                    ),
 
-        ]))])));
-    }
+                  ]))
+            ])));
+  }
 }
