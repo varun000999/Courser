@@ -25,87 +25,94 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     // TODO: Make home page
+
     final topBar = AppBar(
-      title: Text('Courser', style: TextStyle(color: Colors.purple),
-        textAlign: TextAlign.left,),
+      title: Text(
+        'Courser',
+        style: TextStyle(color: Colors.purple),
+        textAlign: TextAlign.left,
+      ),
       backgroundColor: Colors.white,
       centerTitle: true,
       elevation: 0.0,
-      leading: Icon(Icons.menu, color: Colors.purple,),
+      leading: Icon(
+        Icons.menu,
+        color: Colors.purple,
+      ),
       actions: <Widget>[
         IconButton(
-          icon: Icon(Icons.search, color: Colors.purple,),
+          icon: Icon(
+            Icons.search,
+            color: Colors.purple,
+          ),
           onPressed: () {},
         )
       ],
     );
+    
+    Widget CourseCards (List<String> itemList){
+      return GridView.count(
+          crossAxisCount: 3,
+          children: List.generate(itemList.length, (index) {
+            return Card(
+              color: Colors.grey,
+              child:
 
-    Widget _getListItemUI(BuildContext context, int index) {
-      return new Card(
-          child: new Column(
-              children: <Widget>[
-                new ListTile(
-                    title: new Text(
-                      "Python Programming",
-                      style: new TextStyle(
-                          fontSize: 14.0, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: new Column(
-                      children: <Widget>[
-                        Text("Platform", style: TextStyle(fontSize: 9.0))
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                    ),
-                    onTap: () {}
-                )
-              ]));
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child:Padding(
+                      padding: EdgeInsets.all(0.5),
+                      child:Text(
+                        itemList[index],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 12.0),
+                      ))
+              )
+              ,
+            );
+          }));
     }
-
-
-    final gridItem = new Card(
-      child: new Column(
-          children: <Widget>[
-            new Container(
-              color: Colors.red,
-            )
-          ]
-      ),
-    );
-
+    
+    Widget TitleCourseCards (String listTitle, List<String> itemList){
+      return Row(children: <Widget>[
+        new Expanded(
+            child: Column(children: <Widget>[
+              SizedBox(height: 10.0),
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    listTitle,
+                    style: TextStyle(
+                        fontFamily: "Roboto",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0),
+                  )),
+              SizedBox(
+                height: 10.0,
+              ),
+              new Expanded(
+                  child: CourseCards(itemList) ),
+            ]))
+      ]);
+    }
+    
+    List<String> itemList = [
+      "Python for Everybody Specialization",
+      "Programming for Everybody (Getting Started with Python)",
+      "Python Data Structures",
+      "Applied Data Science with Python Specialization",
+      "Introduction to Data Science in Python",
+      "Python 3 Programming Specialization",
+      "Hitchiker's guide to Python"
+    ];
 
     return Scaffold(
         appBar: topBar,
-        body:
-        Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Row(children: <Widget>[
-              new Expanded(child:
-              Column(
-
-                  children: <Widget>[
-                    SizedBox(height: 10.0),
-                    Align(alignment: Alignment.centerLeft,
-                        child: Text("Python", style: TextStyle(
-                            fontFamily: "Roboto",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0),)),
-                    SizedBox(height: 10.0,),
-                    new Expanded(
-                        child: GridView.count(
-                            crossAxisCount: 3,
-                            children: List.generate(6, (index) {
-                              return Card(color: Colors.grey, child: Column(children: <Widget>[SizedBox(height: 60.0,), Text("Python programming for noobs", textAlign: TextAlign.center, style: TextStyle(fontSize: 12.0),)],));
-                            })
-                        )
-                    ),
-
-
-                  ]))
-            ])));
+        body: Padding(
+            padding: EdgeInsets.all(15.0),
+            child: TitleCourseCards("Python programming", itemList)));
   }
 }
