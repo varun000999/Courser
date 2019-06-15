@@ -42,8 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisCount: 2,
           children: List.generate(itemList.length, (index) {
             return Card(
-              color: Colors.black,
-              child:
+              //color: Colors.black,
+              child:Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/python.jpg"),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.topCenter,
+          ),
+        ),
+        child:
 
               Align(
                   alignment: Alignment.bottomCenter,
@@ -56,15 +64,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       ))
               )
               ,
-            );
-          }));
-    }
+            )
+      );})
+      );}
 
     Widget TitleCourseCards (String listTitle, List<String> itemList){
       return Row(children: <Widget>[
         new Expanded(
             child: Column(children: <Widget>[
+             
               SizedBox(height: 10.0),
+              
               Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -79,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               new Expanded(
                   child: CourseCards(itemList) ),
+                  
             ]))
       ]);
     }
@@ -99,3 +110,4 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TitleCourseCards("Recommendations for you", itemList)));
   }
 }
+
