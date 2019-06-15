@@ -24,26 +24,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class CourseCard extends StatefulWidget{
-  CourseCard({Key key, this.cname}) : super(key: key);
-  final String cname;
-
-  @override
-  _CoursePageState createState() => _CoursePageState();
-}
-
-class _CoursePageState extends State<CourseCard>{
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: make course card
-    return Container(
-      child: Row(
-        children: <Widget>[Text(cname, style: TextStyle(fontSize: 24.0),)],
-      ),
-    );
-  }
-}
 class _MyHomePageState extends State<MyHomePage> {
 
   @override
@@ -97,13 +77,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: topBar,
         body:
-            Row(children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+        child:Row(children: <Widget>[
               new Expanded(child:
         Column(
 
         children:<Widget>[
           SizedBox(height:10.0),
-        Align(alignment: Alignment.center, child:Text("Python", style: TextStyle(fontFamily: "Roboto", fontWeight:FontWeight.bold, fontSize: 20.0),)),
+        Align(alignment: Alignment.centerLeft, child:Text("Python", style: TextStyle(fontFamily: "Roboto", fontWeight:FontWeight.bold, fontSize: 24.0),)),
         new Expanded(
           child:GridView.count(
             crossAxisCount: 3,
@@ -112,6 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
         )
     ),
 
-        ]))]));
+        ]))])));
     }
 }
