@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home/home_page.dart';
+import 'add-courses/add_courses.dart';
 
 void main() => runApp(MyApp());
 
