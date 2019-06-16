@@ -8,7 +8,31 @@ class CourseDesc extends StatelessWidget{
   Widget build(BuildContext context){
   
   final courseDescBar = AppBar(backgroundColor: Colors.white,);
+
+  Widget titleGen(String title){
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        child: Text(
+          title,
+          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
   
+  Widget valueGen(String value){
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        child: Text(
+          value,
+          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.w400),
+        ),
+      ),
+    );
+  }
+
   final courseHeading =  Align(
       alignment: Alignment.centerLeft,
       child: Container(
@@ -22,48 +46,10 @@ class CourseDesc extends StatelessWidget{
   // Return a picture according to type of course
   final courseImage = 0;
 
-  //Course Description text
-  final courseDescText =  Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Description",
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-
-  final courseDescPara =  Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          para,
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.w400),
-        ),
-      ),
-    );
-  
   // Type of Course
-  
-  final typeText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Type",
-           style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+  final typeText = titleGen("Type");
 
-  final typeTextValue = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Machine Learning",
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.w400),
-        ),
-      ),
-    );  
+  final typeTextValue = valueGen("Machine Learning");
   
   final courseType = Row(children: <Widget>[
     typeText,
@@ -72,32 +58,22 @@ class CourseDesc extends StatelessWidget{
   ],);
 
   // Price of course
-  final priceText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Price",
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+  final priceText = titleGen("Price");
   
-  final priceTextValue = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Free",
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.w400),
-        ),
-      ),
-    );  
+  final priceTextValue = valueGen("Free");  
   
   final coursePrice = Row(children: <Widget>[
     priceText,
     SizedBox(width: 145.0,),
     priceTextValue
   ],);
+
+  // Pre Requisites
+  // Price of course
+  final preReqText = titleGen("PreRequisites");
   
+  final preReqValue = valueGen("Python3, HTML, CSS, JS, Flask Framework");  
+
    final linkButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(10.0),
@@ -123,32 +99,28 @@ class CourseDesc extends StatelessWidget{
     );
 
   final linkAndUpvote = Row(children: <Widget>[
-    linkButton, SizedBox(width: 100.0,),likeButton
+    likeButton,  SizedBox(width: 20.0,),titleGen("40K"), SizedBox(width: 100.0,),linkButton
 
   ],);
 
   // Reviews
-  final reviewText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Reviews",
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+  final reviewText = titleGen("Reviews");
 
+  final reviewBox = TextField(decoration: InputDecoration(hintText:"Add your comment here....."));
   final spacerCourseDesc = SizedBox(height: 20.0,);
 
   return Scaffold(
     appBar : courseDescBar,
-    body: Padding(
+    body: SingleChildScrollView(child:Padding(
     padding: EdgeInsets.all(10.0),
     child:Column(children: <Widget>[
     courseHeading,
     spacerCourseDesc,
-    courseDescText,
-    courseDescPara,
+    titleGen("Description"),
+    valueGen(para),
+    spacerCourseDesc,
+    preReqText,
+    preReqValue,
     spacerCourseDesc,
     courseType, 
     spacerCourseDesc,
@@ -156,8 +128,9 @@ class CourseDesc extends StatelessWidget{
     spacerCourseDesc,
     linkAndUpvote,
     spacerCourseDesc,
-    reviewText
+    reviewText,
+    reviewBox
   ],),
-  ));
+  )));
   }
 }
