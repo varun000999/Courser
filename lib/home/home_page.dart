@@ -11,8 +11,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: Make home page
-
+    // Home page
+    
+    // App bar of home page 
     final topBar = AppBar(
       title: Text(
         'Courser',
@@ -37,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
 
+    // Generates grid of courses taking input the list of courses
     Widget CourseCards (List<String> itemList){
       return GridView.count(
           crossAxisCount: 2,
@@ -67,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
             )
       );})
       );}
-
+    
+    // Adds title to grid of courses
     Widget TitleCourseCards (String listTitle, List<String> itemList){
       return Row(children: <Widget>[
         new Expanded(
@@ -94,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ]);
     }
 
+    // Replace with list of courses in interests
     List<String> itemList = [
       "Python for Everybody Specialization",
       "Programming for Everybody (Getting Started with Python)",
