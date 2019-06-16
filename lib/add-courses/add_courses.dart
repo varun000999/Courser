@@ -9,6 +9,12 @@ class AddCourses extends StatefulWidget {
 }
 
 class _AddCourseState extends State<AddCourses> {
+  var _courseTypes = ['Web Development', 'Python', 'Java', 'Flutter'];
+  var _courseTypeSelected = 'Web Development';
+
+  var _priceTypes = ['Free', 'Paid'];
+  var _priceTypeSelected = 'Free';
+
   @override
   Widget build(BuildContext context) {
     // Add courses page
@@ -113,52 +119,65 @@ class _AddCourseState extends State<AddCourses> {
     );
 
     // Type of Course
-    String dropDownValue = 'Web Development';
+   
     final type = DropdownButton<String>(
-        value: dropDownValue,
-        onChanged:(String newValue) {
-          setState(() {
-            dropDownValue = newValue;
-          });
-        },
-        items: <String>['Web Development', 'Java', 'Python', 'Flutter']
-          .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          })
-          .toList(),
-          
-      );
+
+					    items: _courseTypes.map((String dropDownStringItem) {
+					    	return DropdownMenuItem<String>(
+							    value: dropDownStringItem,
+							    child: Text(dropDownStringItem),
+						    );
+					    }).toList(),
+
+					    onChanged: (String newValueSelected) {
+					    	// Your code to execute, when a menu item is selected from drop down
+						    _onCourseSelected(newValueSelected);
+					    },
+
+					    value: _courseTypeSelected,
+
+);
 
     // Free or Paid
-    String initValue = 'Free';
-    final freeorpaid = DropdownButton<String>(
-        value: initValue,
-        onChanged:(String newValue) {
-          setState(() {
-            initValue = newValue;
-          });
-        },
-        items: <String>['Free', 'Paid']
-          .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          })
-          .toList(),
-          
-      );
+   
+    final free = DropdownButton<String>(
+
+					    items: _priceTypes.map((String dropDownStringItem) {
+					    	return DropdownMenuItem<String>(
+							    value: dropDownStringItem,
+							    child: Text(dropDownStringItem),
+						    );
+					    }).toList(),
+
+					    onChanged: (String newValueSelected) {
+					    	// Your code to execute, when a menu item is selected from drop down
+						    _onPriceSelected(newValueSelected);
+					    },
+
+					    value: _priceTypeSelected,
+
+);
 
     return Scaffold(
         appBar: topBar,
         body: Center( child: Container(color: Colors.white, child:Padding(
             padding: EdgeInsets.all(15.0), child: Column(crossAxisAlignment: CrossAxisAlignment.end, mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[cnameText, cname, spacer, platformText, platform, spacer,
-             prereqText, prereq, spacer, linkText, link,spacer, type, spacer, freeorpaid, spacer, 
+             prereqText, prereq, spacer, linkText, link,spacer, type, spacer, free, spacer, 
              descText, desc, spacer, sButton],),
         ))));
   }
+
+  void _onCourseSelected(String newValueSelected) {
+	  setState(() {
+		  this._courseTypeSelected = newValueSelected;
+	  });
+  }
+  void _onPriceSelected(String newValueSelected) {
+	  setState(() {
+		  this._priceTypeSelected = newValueSelected;
+	  });
+  }
 }
+
+
