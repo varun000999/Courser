@@ -31,7 +31,7 @@ class _AddCourseState extends State<AddCourses> {
       elevation: 0.0,
       leading: Icon(
         Icons.menu,
-        color: Colors.purple,
+        color: Colors.deepPurple,
       ),
     );
 
