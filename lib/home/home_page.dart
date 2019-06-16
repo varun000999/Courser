@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final topBar = AppBar(
       title: Text(
         'Courser',
-        style: TextStyle(color: Colors.purple),
+        style: TextStyle(color: Colors.deepPurple),
         textAlign: TextAlign.left,
       ),
       backgroundColor: Colors.white,
@@ -25,13 +25,13 @@ class _MyHomePageState extends State<MyHomePage> {
       elevation: 0.0,
       leading: Icon(
         Icons.menu,
-        color: Colors.purple,
+        color: Colors.deepPurple,
       ),
       actions: <Widget>[
         IconButton(
           icon: Icon(
             Icons.search,
-            color: Colors.purple,
+            color: Colors.deepPurple,
           ),
           onPressed: () {},
         )

@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'OpenCourser',
-      home: MyHomePage(),
+      home: AddCourses(),
       debugShowCheckedModeBanner: false,
     );
   }
