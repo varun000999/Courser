@@ -47,7 +47,7 @@ class _AddCourseState extends State<AddCourses> {
       ),
     );
 
-    final cname = TextField();
+    final cname = TextField(decoration: InputDecoration(hintText:"JavaScript for Web Development"));
 
     //Course Platform
     final platformText = Align(
@@ -60,7 +60,7 @@ class _AddCourseState extends State<AddCourses> {
       ),
     );
 
-    final platform = TextField();
+    final platform = TextField(decoration: InputDecoration(hintText:"Udacity"));
 
     // Padding
     final spacer = SizedBox(height: 10.0);
@@ -76,7 +76,7 @@ class _AddCourseState extends State<AddCourses> {
       ),
     );
 
-    final prereq = TextField();
+    final prereq = TextField(decoration: InputDecoration(hintText:"Basic knowledge of HTML & CSS"));
 
     // Link
     final linkText = Align(
