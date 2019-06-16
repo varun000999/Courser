@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../course-description/course_desc.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -43,7 +44,11 @@ class _MyHomePageState extends State<MyHomePage> {
       return GridView.count(
           crossAxisCount: 2,
           children: List.generate(itemList.length, (index) {
-            return Card(
+            return GestureDetector(
+              onTap:(){Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => CourseDesc()),);},
+              child:Card(
               //color: Colors.black,
               child:Container(
         decoration: BoxDecoration(
@@ -67,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
               ,
             )
-      );})
+      ));})
       );}
     
     // Adds title to grid of courses
