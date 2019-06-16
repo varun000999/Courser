@@ -107,6 +107,19 @@ class CourseDesc extends StatelessWidget{
   final reviewText = titleGen("Reviews");
 
   final reviewBox = TextField(decoration: InputDecoration(hintText:"Add your comment here....."));
+
+  final reviewSubButton = Material(
+      elevation: 0.0,
+      borderRadius: BorderRadius.circular(10.0),
+      color: Colors.white,
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {},
+        child: Text("SUBMIT")
+      ),
+    );
+
   final spacerCourseDesc = SizedBox(height: 20.0,);
 
   return Scaffold(
@@ -129,7 +142,9 @@ class CourseDesc extends StatelessWidget{
     linkAndUpvote,
     spacerCourseDesc,
     reviewText,
-    reviewBox
+    reviewBox,
+    spacerCourseDesc,
+    reviewSubButton
   ],),
   )));
   }
