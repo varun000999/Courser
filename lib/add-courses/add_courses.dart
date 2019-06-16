@@ -9,6 +9,7 @@ class AddCourses extends StatefulWidget {
 }
 
 class _AddCourseState extends State<AddCourses> {
+  // Add all the courses here
   var _courseTypes = ['Web Development', 'Python', 'Java', 'Flutter'];
   var _courseTypeSelected = 'Web Development';
 
