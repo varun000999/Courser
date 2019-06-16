@@ -23,7 +23,7 @@ class _AddCourseState extends State<AddCourses> {
     final topBar = AppBar(
       title: Text(
         'Add new course',
-        style: TextStyle(color: Colors.purple),
+        style: TextStyle(color: Colors.deepPurple),
         textAlign: TextAlign.left,
       ),
       backgroundColor: Colors.white,
@@ -119,8 +119,19 @@ class _AddCourseState extends State<AddCourses> {
     );
 
     // Type of Course
-   
-    final type = DropdownButton<String>(
+    final typeText = Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        child: Text(
+          "Course Type",
+          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+
+    final type =Row(children: <Widget>[typeText, 
+    SizedBox(width: 145.0,),
+    DropdownButton<String>(
 
 					    items: _courseTypes.map((String dropDownStringItem) {
 					    	return DropdownMenuItem<String>(
@@ -136,11 +147,19 @@ class _AddCourseState extends State<AddCourses> {
 
 					    value: _courseTypeSelected,
 
-);
+)]);
 
     // Free or Paid
-   
-    final free = DropdownButton<String>(
+    final priceText = Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        child: Text(
+          "Price",
+          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+    final free = Row(children:<Widget>[priceText, SizedBox(width: 275.0,),DropdownButton<String>(
 
 					    items: _priceTypes.map((String dropDownStringItem) {
 					    	return DropdownMenuItem<String>(
@@ -156,14 +175,14 @@ class _AddCourseState extends State<AddCourses> {
 
 					    value: _priceTypeSelected,
 
-);
+)]);
 
     return Scaffold(
         appBar: topBar,
         body: Center( child: Container(color: Colors.white, child:Padding(
             padding: EdgeInsets.all(15.0), child: Column(crossAxisAlignment: CrossAxisAlignment.end, mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[cnameText, cname, spacer, platformText, platform, spacer,
-             prereqText, prereq, spacer, linkText, link,spacer, type, spacer, free, spacer, 
+             prereqText, prereq, spacer, linkText, link,spacer, type, free, spacer, 
              descText, desc, spacer, sButton],),
         ))));
   }
