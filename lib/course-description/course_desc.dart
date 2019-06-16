@@ -7,7 +7,8 @@ class CourseDesc extends StatelessWidget{
   @override 
   Widget build(BuildContext context){
   
-  final courseDescBar = AppBar(backgroundColor: Colors.white,);
+  final courseDescBar = AppBar(title:Text("Course Details", style: TextStyle(color: Colors.deepPurple),),
+  backgroundColor: Colors.white,elevation: 0.0, leading: Icon(Icons.arrow_back, color: Colors.deepPurple,),);
 
   Widget titleGen(String title){
     return Align(
@@ -34,10 +35,10 @@ class CourseDesc extends StatelessWidget{
   }
 
   final courseHeading =  Align(
-      alignment: Alignment.centerLeft,
+      alignment: Alignment.topCenter,
       child: Container(
         child: Text(
-          "Machine Learning in 3 months",
+          "Programming for Everybody (Getting Started with Python)",
           style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 32.0, fontWeight: FontWeight.bold),
         ),
       ),
@@ -104,12 +105,12 @@ class CourseDesc extends StatelessWidget{
   ],);
 
   // Reviews
-  final reviewText = titleGen("Reviews");
+  final reviewText = titleGen("Add a review");
 
   final reviewBox = TextField(decoration: InputDecoration(hintText:"Add your comment here....."));
 
   final reviewSubButton = Material(
-      elevation: 0.0,
+      elevation: 5.0,
       borderRadius: BorderRadius.circular(10.0),
       color: Colors.white,
       child: MaterialButton(
@@ -119,6 +120,11 @@ class CourseDesc extends StatelessWidget{
         child: Text("SUBMIT")
       ),
     );
+  
+  final reviewContainer = new SizedBox(height: 1000.0, child: ListView.builder(itemCount:5, itemBuilder:(BuildContext context, index){ return Card(elevation: 5.0, child: Column(children: <Widget>[
+    titleGen("username"),
+    Text("adfk;fnad;fnad;ifbd;fiba;ifb;ailbef;ibaefi;eb;fiabefi;bea;ifbaei;f dalkbjflkjdbflkabjdsflkjbadsfkljabdsflkjabdslkfjbadslkjbfadlskjbfladksjbfdkjlasbfkjadbfkjadbfkjbaflkjbdfkljbadskjlfbasdlkjbfadskjlbfauelgruaieroqiboafb")
+  ],),);}));
 
   final spacerCourseDesc = SizedBox(height: 20.0,);
 
@@ -144,7 +150,10 @@ class CourseDesc extends StatelessWidget{
     reviewText,
     reviewBox,
     spacerCourseDesc,
-    reviewSubButton
+    reviewSubButton,
+    spacerCourseDesc,
+    titleGen("Reviews"),
+    reviewContainer
   ],),
   )));
   }
