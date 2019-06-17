@@ -1,4 +1,6 @@
+import 'package:courser/drawer/drawer.dart';
 import 'package:flutter/material.dart';
+import '../drawer/drawer.dart';
 
 class AddCourses extends StatefulWidget {
   AddCourses({Key key, this.title}) : super(key: key);
@@ -124,16 +126,15 @@ class _AddCourseState extends State<AddCourses> {
       alignment: Alignment.centerLeft,
       child: Container(
         child: Text(
-          "Course Type",
+          "Type",
           style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
         ),
       ),
     );
 
-    final type =Row(children: <Widget>[typeText, 
-    SizedBox(width: 145.0,),
-    DropdownButton<String>(
-
+    final type =Align( alignment: Alignment.centerLeft,
+    child:DropdownButton<String>(
+              
 					    items: _courseTypes.map((String dropDownStringItem) {
 					    	return DropdownMenuItem<String>(
 							    value: dropDownStringItem,
@@ -148,19 +149,20 @@ class _AddCourseState extends State<AddCourses> {
 
 					    value: _courseTypeSelected,
 
-)]);
+));
 
-    // Free or Paid
-    final priceText = Align(
+    final freeText = Align(
       alignment: Alignment.centerLeft,
       child: Container(
         child: Text(
-          "Price",
+          "Type",
           style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
         ),
       ),
     );
-    final free = Row(children:<Widget>[priceText, SizedBox(width: 275.0,),DropdownButton<String>(
+
+    final free =Align(alignment: Alignment.centerLeft,
+      child:DropdownButton<String>(
 
 					    items: _priceTypes.map((String dropDownStringItem) {
 					    	return DropdownMenuItem<String>(
@@ -176,16 +178,17 @@ class _AddCourseState extends State<AddCourses> {
 
 					    value: _priceTypeSelected,
 
-)]);
+));
 
     return Scaffold(
         appBar: topBar,
-        body: Center( child: Container(color: Colors.white, child:Padding(
+        drawer: AppDrawer(),
+        body: SingleChildScrollView(child:Center( child: Container(color: Colors.white, child:Padding(
             padding: EdgeInsets.all(15.0), child: Column(crossAxisAlignment: CrossAxisAlignment.end, mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[cnameText, cname, spacer, platformText, platform, spacer,
-             prereqText, prereq, spacer, linkText, link,spacer, type, free, spacer, 
+             prereqText, prereq, spacer, linkText, link,spacer, typeText, type, spacer, freeText, free, spacer, 
              descText, desc, spacer, sButton],),
-        ))));
+        )))));
   }
 
   void _onCourseSelected(String newValueSelected) {
