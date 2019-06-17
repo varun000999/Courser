@@ -22,7 +22,7 @@ class _AddCourseState extends State<AddCourses> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    // Add courses page ( For any help see : ../BasicUI/basicui.dart)
+    //TODO:Add courses page ( For any help see : ../BasicUI/basicui.dart)
 
     // Appbar of add courses page
     final topBar = SecondaryAppBar('Add a new course', _scaffoldKey);
