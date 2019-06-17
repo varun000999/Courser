@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../course-description/course_desc.dart';
+import "../drawer/drawer.dart";
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -114,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
         appBar: topBar,
+        drawer : AppDrawer(),
         body: Padding(
             padding: EdgeInsets.all(15.0),
             child: TitleCourseCards("Recommendations for you", itemList)));
