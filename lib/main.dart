@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'OpenCourser',
       home: MyHomePage(),
-     
       debugShowCheckedModeBanner: false,
     );
   }
