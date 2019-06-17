@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+// Generates a string title
+/* Used at 
+Add Courses page
+
+
+
+*/
 Widget titleGen(String title, double size, var weight, var tcolor) {
   return Align(
     alignment: Alignment.centerLeft,
@@ -16,6 +23,13 @@ Widget titleGen(String title, double size, var weight, var tcolor) {
   );
 }
 
+// Generates a description
+/* Used at 
+
+
+
+
+*/
 Widget valueGen(String value) {
   return Align(
     alignment: Alignment.centerLeft,
@@ -32,10 +46,24 @@ Widget valueGen(String value) {
   );
 }
 
+// Generates a Text Field
+/* Used at 
+Add Courses page
+
+
+
+*/
 Widget TFieldGen(String decoration) {
   return TextField(decoration: InputDecoration(hintText: decoration));
 }
 
+// Generates a Button
+/* Used at 
+Add Courses page
+
+
+
+*/
 Widget ButtonGen(
     BuildContext context, String buttonText, var textColor, var buttonColor) {
   return Material(
@@ -53,6 +81,13 @@ Widget ButtonGen(
   );
 }
 
+// Generates a Secondary app bar (App bars for pages other than home page)
+/* Used at 
+Add Courses page
+
+
+
+*/
 Widget SecondaryAppBar(String title, GlobalKey<ScaffoldState> _scaffoldKey) {
   return AppBar(
     title: Text(
