@@ -50,6 +50,14 @@ class _AddCourseState extends State<AddCourses> {
     // Type of Course
     final typeText =  titleGen("Type", 12.0, FontWeight.bold, Colors.grey);;
 
+    // To change course type on selection from dropdown
+  void _onCourseSelected(String newValueSelected) {
+	  setState(() {
+		  this._courseTypeSelected = newValueSelected;
+	  });
+  }
+
+    // DropDown list of types of courses
     final type =Align( alignment: Alignment.centerLeft,
     child:DropdownButton<String>(
               
@@ -61,7 +69,7 @@ class _AddCourseState extends State<AddCourses> {
 					    }).toList(),
 
 					    onChanged: (String newValueSelected) {
-					    	// Your code to execute, when a menu item is selected from drop down
+					    
 						    _onCourseSelected(newValueSelected);
 					    },
 
@@ -71,7 +79,13 @@ class _AddCourseState extends State<AddCourses> {
 
     // Price of Course
     final freeText = titleGen("Price", 12.0, FontWeight.bold, Colors.grey);
-
+    // To change course type on selection from dropdown
+  void _onPriceSelected(String newValueSelected) {
+	  setState(() {
+		  this._priceTypeSelected = newValueSelected;
+	  });
+  }
+    // DropDown list of Price (Free or Paid)
     final free =Align(alignment: Alignment.centerLeft,
       child:DropdownButton<String>(
 
@@ -114,16 +128,8 @@ class _AddCourseState extends State<AddCourses> {
         )))));
   }
 
-  void _onCourseSelected(String newValueSelected) {
-	  setState(() {
-		  this._courseTypeSelected = newValueSelected;
-	  });
-  }
-  void _onPriceSelected(String newValueSelected) {
-	  setState(() {
-		  this._priceTypeSelected = newValueSelected;
-	  });
-  }
+  
+  
 }
 
 
