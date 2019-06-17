@@ -1,6 +1,7 @@
 import 'package:courser/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import '../drawer/drawer.dart';
+import '../BasicUI/basic_ui.dart';
 
 class AddCourses extends StatefulWidget {
   AddCourses({Key key, this.title}) : super(key: key);
@@ -21,118 +22,33 @@ class _AddCourseState extends State<AddCourses> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    // Add courses page
+    // Add courses page ( For any help see : ../BasicUI/basicui.dart)
 
     // Appbar of add courses page
-    final topBar = AppBar(
-      title: Text(
-        'Add new course',
-        style: TextStyle(color: Colors.deepPurple),
-        textAlign: TextAlign.left,
-      ),
-      backgroundColor: Colors.white,
-      centerTitle: true,
-      elevation: 0.0,
-      leading: IconButton(icon:Icon(
-        Icons.menu,
-        color: Colors.deepPurple,
-      ),
-      onPressed: () => _scaffoldKey.currentState.openDrawer(),),
-    );
+    final topBar = SecondaryAppBar('Add a new course', _scaffoldKey);
 
     // Course Name
-    final cnameText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Course Name",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final cnameText = titleGen("Course Name", 12.0, FontWeight.bold, Colors.grey);
 
-    final cname = TextField(decoration: InputDecoration(hintText:"JavaScript for Web Development"));
+    final cname = TFieldGen("JavaScript for Web Development");
 
     //Course Platform
-    final platformText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Platform",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final platformText = titleGen("Platform", 12.0, FontWeight.bold, Colors.grey);
 
-    final platform = TextField(decoration: InputDecoration(hintText:"Udacity"));
-
-    // Padding
-    final spacer = SizedBox(height: 10.0);
-
+    final platform = TFieldGen("Udacity");
+    
     // Prerequisites
-    final prereqText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Prerequisites",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final prereqText = titleGen("Pre Requisites for course", 12.0, FontWeight.bold, Colors.grey);
 
-    final prereq = TextField(decoration: InputDecoration(hintText:"Basic knowledge of HTML & CSS"));
+    final prereq = TFieldGen("Basic knowledge of HTML & CSS");
 
     // Link
-    final linkText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Link to Course",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final linkText = titleGen("Link to Course", 12.0, FontWeight.bold, Colors.grey);
 
-    final link = TextField();
-
-    // Link
-    final descText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Description",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-
-    final desc = TextField();
-
-    // Submit button
-    final sButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(10.0),
-      color: Colors.deepPurple,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-        child: Text("SUBMIT",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 21.0,color: Colors.white)),
-      ),
-    );
-
+    final link = TFieldGen("");
+    
     // Type of Course
-    final typeText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Type",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final typeText =  titleGen("Type", 12.0, FontWeight.bold, Colors.grey);;
 
     final type =Align( alignment: Alignment.centerLeft,
     child:DropdownButton<String>(
@@ -153,15 +69,8 @@ class _AddCourseState extends State<AddCourses> {
 
 ));
 
-    final freeText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Type",
-          style: TextStyle(color: Colors.grey, fontFamily: "Roboto", fontSize: 12.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    // Price of Course
+    final freeText = titleGen("Price", 12.0, FontWeight.bold, Colors.grey);
 
     final free =Align(alignment: Alignment.centerLeft,
       child:DropdownButton<String>(
@@ -181,7 +90,18 @@ class _AddCourseState extends State<AddCourses> {
 					    value: _priceTypeSelected,
 
 ));
+    
+    // Description
+    final descText =  titleGen("Description", 12.0, FontWeight.bold, Colors.grey);
 
+    final desc =  TFieldGen("");
+
+    // Padding between textfields
+    final spacer = SizedBox(height: 10.0);
+
+  // Submit button
+    final sButton = ButtonGen(context, 'SUBMIT', Colors.white, Colors.deepPurple);
+    
     return Scaffold(
       key: _scaffoldKey,
         appBar: topBar,
