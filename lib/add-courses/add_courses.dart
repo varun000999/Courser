@@ -18,6 +18,7 @@ class _AddCourseState extends State<AddCourses> {
   var _priceTypes = ['Free', 'Paid'];
   var _priceTypeSelected = 'Free';
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     // Add courses page
@@ -32,10 +33,11 @@ class _AddCourseState extends State<AddCourses> {
       backgroundColor: Colors.white,
       centerTitle: true,
       elevation: 0.0,
-      leading: Icon(
+      leading: IconButton(icon:Icon(
         Icons.menu,
         color: Colors.deepPurple,
       ),
+      onPressed: () => _scaffoldKey.currentState.openDrawer(),),
     );
 
     // Course Name
@@ -181,6 +183,7 @@ class _AddCourseState extends State<AddCourses> {
 ));
 
     return Scaffold(
+      key: _scaffoldKey,
         appBar: topBar,
         drawer: AppDrawer(),
         body: SingleChildScrollView(child:Center( child: Container(color: Colors.white, child:Padding(

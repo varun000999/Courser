@@ -17,13 +17,15 @@ class AppDrawer extends StatelessWidget{
             title: new Text('Home '),
             onTap: (){Navigator.push(context, new MaterialPageRoute(
               builder: (BuildContext) => new MyHomePage()
-            ));},
+            ));
+            },
           ),
           new ListTile(
             title: new Text('Add a new course'),
             onTap: (){Navigator.push(context, new MaterialPageRoute(
               builder: (BuildContext) => new AddCourses()
-            ));},
+            ));
+            },
           )
         ],
       ),

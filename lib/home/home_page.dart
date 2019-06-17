@@ -11,6 +11,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  
   @override
   Widget build(BuildContext context) {
     // Home page
@@ -25,10 +28,11 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.white,
       centerTitle: true,
       elevation: 0.0,
-      leading: Icon(
+      leading: IconButton(icon:Icon(
         Icons.menu,
         color: Colors.deepPurple,
       ),
+      onPressed: () => _scaffoldKey.currentState.openDrawer(),),
       actions: <Widget>[
         IconButton(
           icon: Icon(
@@ -114,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     return Scaffold(
+        key: _scaffoldKey,
         appBar: topBar,
         drawer : AppDrawer(),
         body: Padding(
