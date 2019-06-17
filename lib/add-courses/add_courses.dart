@@ -12,7 +12,7 @@ class AddCourses extends StatefulWidget {
 }
 
 class _AddCourseState extends State<AddCourses> {
-  // Add all the courses here
+  // TODO : Add all the courses here
   var _courseTypes = ['Web Development', 'Python', 'Java', 'Flutter'];
   var _courseTypeSelected = 'Web Development';
 
@@ -23,7 +23,7 @@ class _AddCourseState extends State<AddCourses> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO:Add courses page ( For any help see : ../BasicUI/basicui.dart)
+    // Add courses page ( For any help see : ../BasicUI/basicui.dart)
 
     // Appbar of add courses page
     final topBar = SecondaryAppBar('Add a new course', _scaffoldKey);
