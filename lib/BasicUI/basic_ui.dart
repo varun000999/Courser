@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // Generates a string title
 /* Used at 
 Add Courses page
-
+Course Description page
 
 
 */
@@ -25,7 +25,7 @@ Widget titleGen(String title, double size, var weight, var tcolor) {
 
 // Generates a description
 /* Used at 
-
+Course Description page
 
 
 

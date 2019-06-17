@@ -1,54 +1,30 @@
 import 'package:flutter/material.dart';
+import '../BasicUI/basic_ui.dart';
 
 class CourseDesc extends StatelessWidget{
   
-  var para = 'Lorem ipsum dolor sit amet kdjflakjdf ladsk fdskj fakjs dflakj sdfla lfj adlf aldf aldjf aldsjf aldsj faldsj faljs dfjlads fjlfad sflj adslfj djlf adsjlf adl faljf adlj fajldf adsljf aldsj fajlds ';
+  var para = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
   @override 
   Widget build(BuildContext context){
   
+  // App bar of Course page
   final courseDescBar = AppBar(title:Text("Course Details", style: TextStyle(color: Colors.deepPurple),),
-  backgroundColor: Colors.white,elevation: 0.0, leading: Icon(Icons.arrow_back, color: Colors.deepPurple,),);
-
-  Widget titleGen(String title){
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          title,
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
+  backgroundColor: Colors.white,elevation: 0.0, leading: IconButton(icon:Icon(Icons.arrow_back, color: Colors.deepPurple,), onPressed: (){},) );
   
-  Widget valueGen(String value){
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          value,
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 18.0, fontWeight: FontWeight.w400),
-        ),
-      ),
-    );
-  }
-
-  final courseHeading =  Align(
-      alignment: Alignment.topCenter,
-      child: Container(
-        child: Text(
-          "Programming for Everybody (Getting Started with Python)",
-          style: TextStyle(color: Colors.black, fontFamily: "Roboto", fontSize: 32.0, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-
-  // Return a picture according to type of course
+  // Heading of Course
+  final courseHeading =  titleGen('Programming for Everybody (Getting Started with Python)', 32.0, FontWeight.bold, Colors.black);
+  
+  // TODO: Return a picture according to type of course
   final courseImage = 0;
+  
+  // Pre Requisites
+  final preReqText = titleGen("Pre Requisites", 18.0, FontWeight.bold, Colors.black);
+  
+  final preReqValue = valueGen("Python3, HTML, CSS, JS, Flask Framework");  
 
   // Type of Course
-  final typeText = titleGen("Type");
+  final typeText = titleGen("Type", 18.0, FontWeight.bold, Colors.black);
 
   final typeTextValue = valueGen("Machine Learning");
   
@@ -59,7 +35,7 @@ class CourseDesc extends StatelessWidget{
   ],);
 
   // Price of course
-  final priceText = titleGen("Price");
+  final priceText = titleGen("Price", 18.0, FontWeight.bold, Colors.black);
   
   final priceTextValue = valueGen("Free");  
   
@@ -69,22 +45,17 @@ class CourseDesc extends StatelessWidget{
     priceTextValue
   ],);
 
-  // Pre Requisites
-  // Price of course
-  final preReqText = titleGen("PreRequisites");
   
-  final preReqValue = valueGen("Python3, HTML, CSS, JS, Flask Framework");  
-
    final linkButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(10.0),
-      color: Colors.white,
+      color: Colors.deepPurple,
       child: MaterialButton(
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {},
         child: Text("LINK",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 21.0,color: Colors.deepPurple)),
+            style: TextStyle(fontSize: 21.0,color: Colors.white)),
       ),
     );
 
@@ -95,17 +66,17 @@ class CourseDesc extends StatelessWidget{
       child: MaterialButton(
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {},
-        child: Icon(Icons.thumb_up, color: Colors.grey,)
+        child: Icon(Icons.arrow_upward, color: Colors.deepPurple,)
       ),
     );
 
   final linkAndUpvote = Row(children: <Widget>[
-    likeButton,  SizedBox(width: 20.0,),titleGen("40K"), SizedBox(width: 100.0,),linkButton
+    likeButton,  SizedBox(width: 20.0,),titleGen("40K", 18.0, FontWeight.bold, Colors.black), SizedBox(width: 100.0,),linkButton
 
   ],);
 
   // Reviews
-  final reviewText = titleGen("Add a review");
+  final reviewText = titleGen("Reviews", 18.0, FontWeight.bold, Colors.black);
 
   final reviewBox = TextField(decoration: InputDecoration(hintText:"Add your comment here....."));
 
@@ -121,21 +92,22 @@ class CourseDesc extends StatelessWidget{
       ),
     );
   
-  final reviewContainer = new SizedBox(height: 1000.0, child: ListView.builder(itemCount:5, itemBuilder:(BuildContext context, index){ return Card(elevation: 5.0, child: Column(children: <Widget>[
-    titleGen("username"),
-    Text("adfk;fnad;fnad;ifbd;fiba;ifb;ailbef;ibaefi;eb;fiabefi;bea;ifbaei;f dalkbjflkjdbflkabjdsflkjbadsfkljabdsflkjabdslkfjbadslkjbfadlskjbfladksjbfdkjlasbfkjadbfkjadbfkjbaflkjbdfkljbadskjlfbasdlkjbfadskjlbfauelgruaieroqiboafb")
-  ],),);}));
+  final reviewContainer = new SizedBox(height: 100.0, child: ListView.builder(itemCount:5, itemBuilder:(BuildContext context, index){ return Padding( padding: EdgeInsets.only(top: 20.0), child:Card(elevation: 5.0, child: Column(children: <Widget>[
+    titleGen("Username", 12.0, FontWeight.bold, Colors.deepPurple),
+    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ")
+  ],),));}));
 
   final spacerCourseDesc = SizedBox(height: 20.0,);
 
   return Scaffold(
     appBar : courseDescBar,
-    body: SingleChildScrollView(child:Padding(
+    body: SingleChildScrollView(
+    child:Padding(
     padding: EdgeInsets.all(10.0),
     child:Column(children: <Widget>[
     courseHeading,
     spacerCourseDesc,
-    titleGen("Description"),
+    titleGen("Description", 18.0, FontWeight.bold, Colors.black),
     valueGen(para),
     spacerCourseDesc,
     preReqText,
@@ -152,7 +124,7 @@ class CourseDesc extends StatelessWidget{
     spacerCourseDesc,
     reviewSubButton,
     spacerCourseDesc,
-    titleGen("Reviews"),
+    titleGen("Reviews", 18.0, FontWeight.bold, Colors.black),
     reviewContainer
   ],),
   )));
