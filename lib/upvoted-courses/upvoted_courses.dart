@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../drawer/drawer.dart';
-import '../BasicUI/basic_ui.dart';
+import 'package:courser/drawer/drawer.dart';
+import 'package:courser/BasicUI/basic_ui.dart';
 
 class UpvCourses extends StatefulWidget {
   UpvCourses({Key key, this.title}) : super(key: key);
