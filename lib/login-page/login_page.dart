@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sign_up_page.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -30,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final SignUp= Align(
+    final SignUp= GestureDetector(child:Align(
       alignment: Alignment.center,
       child: Container(
         child:Text("SIGN UP FOR AN ACCOUNT",
@@ -38,7 +39,11 @@ class _LoginPageState extends State<LoginPage> {
           textAlign: TextAlign.center,
         )
         ),
-      );
+      ),
+      
+      onTap: (){Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => SignUpPage()),);},);
 
     final PassWordText = Align(
       alignment: Alignment.centerLeft,
