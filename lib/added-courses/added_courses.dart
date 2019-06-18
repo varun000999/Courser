@@ -20,8 +20,6 @@ class _AddedCourseState extends State<AddedCourses> {
     // Appbar of added courses page
     final topBar = SecondaryAppBar('Courses added by you', _scaffoldKey);
 
-    
-
     return Scaffold(
         key: _scaffoldKey,
         appBar: topBar,

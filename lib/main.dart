@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
-import 'home/home_page.dart';
-import 'add-courses/add_courses.dart';
-import 'login-page/login_page.dart';
+import 'package:courser/API/checks.dart';
 
 void main() => runApp(MyApp());
 
-int _userSignedIn = 1;
-
-Widget UserSignInCheck (int val){
-  if (val == 0){
-    return LoginPage();
-  }
-
-  else if (val ==1){
-  return MyHomePage();
-  }
-}
+int _userSignedIn = 0;
 
 class MyApp extends StatelessWidget {
   @override
