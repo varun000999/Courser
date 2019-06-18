@@ -14,18 +14,23 @@ class _UpvCourseState extends State<UpvCourses> {
   // TODO : Courses upvoted by user
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
+  List <String> itemList = ["Applied Data Science with Python Specialization",
+      "Introduction to Data Science in Python",
+      "Python 3 Programming Specialization",
+    ];
   @override
   Widget build(BuildContext context) {
     
     // Appbar of added courses page
     final topBar = SecondaryAppBar('Courses upvoted by you', _scaffoldKey);
 
-    
+    final upvotedCourses = CourseCards(context, itemList);
 
     return Scaffold(
         key: _scaffoldKey,
         appBar: topBar,
         drawer: AppDrawer(),
+        body: upvotedCourses,
         );
   }
 }

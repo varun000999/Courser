@@ -115,6 +115,8 @@ Widget SecondaryAppBar(String title, GlobalKey<ScaffoldState> _scaffoldKey) {
 /*Generates course cards on input of String list
 Used at:
 Home Page
+Added Courses Page
+Upvoted Courses Page
 
 
 */

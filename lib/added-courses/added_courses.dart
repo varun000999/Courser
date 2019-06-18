@@ -13,6 +13,10 @@ class AddedCourses extends StatefulWidget {
 class _AddedCourseState extends State<AddedCourses> {
   // TODO : Courses added by user
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+   List<String> itemList = [
+      "Python for Everybody Specialization",
+      "Programming for Everybody (Getting Started with Python)",
+      "Python Data Structures"]
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +24,13 @@ class _AddedCourseState extends State<AddedCourses> {
     // Appbar of added courses page
     final topBar = SecondaryAppBar('Courses added by you', _scaffoldKey);
 
+    final addedCourses = CourseCards(context, itemList);
+
     return Scaffold(
         key: _scaffoldKey,
         appBar: topBar,
         drawer: AppDrawer(),
+        body: addedCourses,
         );
   }
 }
