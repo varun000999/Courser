@@ -2,6 +2,7 @@ import 'package:courser/home/home_page.dart';
 import 'package:flutter/material.dart';
 import "package:courser/add-courses/add_courses.dart";
 import 'package:courser/added-courses/added_courses.dart';
+import 'package:courser/upvoted-courses/upvoted_courses.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -38,6 +39,17 @@ class AppDrawer extends StatelessWidget {
                   new MaterialPageRoute(
                       builder: (BuildContext) => new AddedCourses()));
             },
+            
+          ),
+          new ListTile(
+            title: new Text('Upvoted courses'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (BuildContext) => new UpvCourses()));
+            },
+            
           )
         ],
       ),
