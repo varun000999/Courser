@@ -16,7 +16,7 @@ class _AddedCourseState extends State<AddedCourses> {
    List<String> itemList = [
       "Python for Everybody Specialization",
       "Programming for Everybody (Getting Started with Python)",
-      "Python Data Structures"]
+      "Python Data Structures"];
 
   @override
   Widget build(BuildContext context) {

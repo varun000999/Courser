@@ -90,7 +90,7 @@ class CourseDesc extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           onPressed: () {},
           child: Icon(
-            Icons.arrow_upward,
+            Icons.thumb_up,
             color: Colors.deepPurple,
           )),
     );
@@ -115,16 +115,7 @@ class CourseDesc extends StatelessWidget {
     final reviewBox = TextField(
         decoration: InputDecoration(hintText: "Add your comment here....."));
 
-    final reviewSubButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(10.0),
-      color: Colors.white,
-      child: MaterialButton(
-          minWidth: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          onPressed: () {},
-          child: Text("SUBMIT")),
-    );
+    final reviewSubButton = ButtonGen(context, "SUBMIT REVIEW", Colors.white, Colors.black);
 
     final reviewContainer = new SizedBox(
         height: 100.0,
