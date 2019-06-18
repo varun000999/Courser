@@ -64,14 +64,17 @@ Add Courses page
 
 
 */
-Widget ButtonGen(
-    BuildContext context, String buttonText, var textColor, var buttonColor) {
+Widget ButtonGen(BuildContext context, String buttonText, var textColor,
+    var buttonColor) {
   return Material(
     elevation: 5.0,
     borderRadius: BorderRadius.circular(10.0),
     color: buttonColor,
     child: MaterialButton(
-      minWidth: MediaQuery.of(context).size.width,
+      minWidth: MediaQuery
+          .of(context)
+          .size
+          .width,
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
       onPressed: () {},
       child: Text(buttonText,
