@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:courser/course-description/course_desc.dart';
 
 // Generates a string title
 /* Used at 
@@ -110,3 +111,44 @@ Widget SecondaryAppBar(String title, GlobalKey<ScaffoldState> _scaffoldKey) {
     ),
   );
 }
+
+/*Generates course cards on input of String list
+Used at:
+Home Page
+
+
+*/
+Widget CourseCards (BuildContext context, List<String> itemList){
+      return GridView.count(
+          crossAxisCount: 2,
+          children: List.generate(itemList.length, (index) {
+            return GestureDetector(
+              onTap:(){Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => CourseDesc()),);},
+              child:Card(
+              //color: Colors.black,
+              child:Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/python.jpg"),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.topCenter,
+          ),
+        ),
+        child:
+
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child:Padding(
+                      padding: EdgeInsets.all(0.5),
+                      child:Text(
+                        itemList[index],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 12.0, color: Colors.white),
+                      ))
+              )
+              ,
+            )
+      ));})
+      );}

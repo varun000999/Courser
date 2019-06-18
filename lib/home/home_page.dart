@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../course-description/course_desc.dart';
 import "../drawer/drawer.dart";
+import 'package:courser/BasicUI/basic_ui.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -45,40 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     // Generates grid of courses taking input the list of courses
-    Widget CourseCards (List<String> itemList){
-      return GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(itemList.length, (index) {
-            return GestureDetector(
-              onTap:(){Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => CourseDesc()),);},
-              child:Card(
-              //color: Colors.black,
-              child:Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/python.jpg"),
-            fit: BoxFit.fitWidth,
-            alignment: Alignment.topCenter,
-          ),
-        ),
-        child:
-
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child:Padding(
-                      padding: EdgeInsets.all(0.5),
-                      child:Text(
-                        itemList[index],
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 12.0, color: Colors.white),
-                      ))
-              )
-              ,
-            )
-      ));})
-      );}
     
     // Adds title to grid of courses
     Widget TitleCourseCards (String listTitle, List<String> itemList){
@@ -101,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 10.0,
               ),
               new Expanded(
-                  child: CourseCards(itemList) ),
+                  child: CourseCards(context, itemList) ),
                   
             ]))
       ]);
