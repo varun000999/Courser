@@ -1,6 +1,7 @@
 import 'package:courser/home/home_page.dart';
 import 'package:flutter/material.dart';
-import "../add-courses/add_courses.dart";
+import "package:courser/add-courses/add_courses.dart";
+import 'package:courser/added-courses/added_courses.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -27,6 +28,15 @@ class AppDrawer extends StatelessWidget {
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext) => new AddCourses()));
+            },
+          ),
+          new ListTile(
+            title: new Text('Added courses'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (BuildContext) => new AddedCourses()));
             },
           )
         ],
