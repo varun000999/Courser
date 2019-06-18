@@ -10,9 +10,9 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          new UserAccountsDrawerHeader(
-              accountName: Text('Avnish Pal'),
-              accountEmail: Text('avnishnish07@gmail.com')),
+          new Container(child: new DrawerHeader(child: Align(alignment:Alignment.bottomLeft, child:Text('Username goes here', style: TextStyle(color: Colors.white),)),
+              
+          ),color: Colors.deepPurple,),
           new ListTile(
             title: new Text('Home '),
             onTap: () {
