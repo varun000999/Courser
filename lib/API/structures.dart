@@ -12,7 +12,7 @@ class Course {
   String type; //type of course
   String link; //link of course
   String platform; //platform providing course(like udemy,coursera)
-  int _upvCount; //no. of upvotes/likes on course
+  int upvCount; //no. of upvotes/likes on course
   int free; //represent boolean value free=1 and paid=0
 
   Course(int cid, String cname, String uname, String createdDate, String desc, 
@@ -25,12 +25,8 @@ class Course {
     this.type =  type;
     this.link =  link;
     this.platform =  platform;
-    this._upvCount =  _upvCount;
+    this.upvCount =  upvCount;
     this.free =  free;     
-  }
-
-  int getUpv(){
-    return _upvCount;
   }
 }
 
@@ -41,9 +37,9 @@ class CourseReview {
 }
 
 class User {
-  int _uid;
+  int uid;
   String uname;
-  String _doj;
+  String doj;
   List<int> addedCourses;
   List<int> upvotedCourses;
   List<int> reviewedCourses;
