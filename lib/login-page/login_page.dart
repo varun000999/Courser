@@ -14,7 +14,11 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    // Text field for username
     final TField = TextField();
+
+    // Login button
     final LButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(10.0),
@@ -29,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
+    // Sign Up for account text
     final SignUp = GestureDetector(
       child: Align(
         alignment: Alignment.center,
@@ -48,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
+    // "Password" text 
     final PassWordText = Align(
       alignment: Alignment.centerLeft,
       child: Container(
@@ -62,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
+    // Header text
     final SignIn = Align(
       alignment: Alignment.center,
       child: Container(
@@ -76,6 +83,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
+    // "Username" text
     final UNameText = Align(
       alignment: Alignment.centerLeft,
       child: Container(
@@ -90,6 +98,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
+    // Header text 1
     final Welcome = Align(
       alignment: Alignment.center,
       child: Container(
