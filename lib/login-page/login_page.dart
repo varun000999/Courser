@@ -5,7 +5,6 @@ import 'package:courser/home/home_page.dart';
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
   final String title;
@@ -58,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
     final LButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(10.0),
-      color: Colors.purple,
+      color: Colors.deepPurple,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -89,20 +88,9 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
-    // "Password" text 
-    final PassWordText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Password",
-          style: TextStyle(
-              color: Colors.grey,
-              fontFamily: "Roboto",
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+
+    final PassWordText = titleGen("Password", 12.0, FontWeight.bold, Colors.grey);
+
 
     // Header text
     final SignIn = Align(
@@ -119,19 +107,9 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final EmailText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Email",
-          style: TextStyle(
-              color: Colors.grey,
-              fontFamily: "Roboto",
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+
+    final EmailText = titleGen("Email", 12.0, FontWeight.bold, Colors.grey);
+
 
     // Header text 1
     final Welcome = Align(
@@ -140,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Text(
           "Welcome to Courser",
           style: TextStyle(
-              color: Colors.purple, fontFamily: "Roboto", fontSize: 21.0),
+              color: Colors.deepPurple, fontFamily: "Roboto", fontSize: 21.0),
         ),
       ),
     );
