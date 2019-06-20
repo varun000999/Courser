@@ -20,7 +20,7 @@ class CourseDesc extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.deepPurple,
           ),
-          onPressed: () {},
+          onPressed: () {Navigator.pop(context);},
         ));
 
     // Heading of Course
