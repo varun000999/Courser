@@ -1,5 +1,10 @@
+import 'package:courser/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'sign_up_page.dart';
+import 'package:courser/home/home_page.dart';
+import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -8,15 +13,46 @@ class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
-
+final FirebaseAuth mAuth = FirebaseAuth.instance;
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   TextStyle style = TextStyle(fontFamily: 'Roboto', fontSize: 20.0);
 
   @override
   Widget build(BuildContext context) {
 
-    // Text field for username
-    final TField = TextField();
+    final EField = TextFormField(
+              controller: emailController,
+                validator: (input) {
+                        if (input.isEmpty) {
+                          return "Please type an email";
+                        }
+                      },
+                       decoration: InputDecoration(
+    
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0)
+                          )
+                      )
+
+            );
+    final PField =  TextFormField(
+              controller: passwordController,
+                validator: (input) {
+                        if (input.isEmpty) {
+                          return "Please type an password";
+                        }
+                      },
+                       decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0)
+                          )
+                      ),
+            obscureText: true,
+
+            );
 
     // Login button
     final LButton = Material(
@@ -26,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: ()=> signin(),
         child: Text("SIGN IN",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 21.0, color: Colors.white)),
@@ -83,12 +119,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    // "Username" text
-    final UNameText = Align(
+    final EmailText = Align(
       alignment: Alignment.centerLeft,
       child: Container(
         child: Text(
-          "Username",
+          "Email",
           style: TextStyle(
               color: Colors.grey,
               fontFamily: "Roboto",
@@ -133,11 +168,11 @@ class _LoginPageState extends State<LoginPage> {
                   height: 220.0,
                 ),
                 SizedBox(height: 45.0),
-                UNameText,
-                TField,
+                EmailText,
+                EField,
                 SizedBox(height: 15.0),
                 PassWordText,
-                TField,
+                PField,
                 SizedBox(
                   height: 10.0,
                 ),
@@ -153,4 +188,22 @@ class _LoginPageState extends State<LoginPage> {
       ),
     ));
   }
-}
+  void signin() async{
+    FirebaseUser user;
+    try {
+      user = await mAuth.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext)=> MyHomePage()));
+
+    }catch(e){
+      print(e.toString());
+    }
+    
+    finally{
+      if(user!=null){
+        print("User is signed in");
+      }
+    }
+  }
+  }
+

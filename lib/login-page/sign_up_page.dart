@@ -1,6 +1,8 @@
+import 'package:courser/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key, this.title}) : super(key: key);
   final String title;
@@ -8,11 +10,45 @@ class SignUpPage extends StatefulWidget {
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
+final FirebaseAuth mAuth = FirebaseAuth.instance;
+
+
 
 class _SignUpPageState extends State<SignUpPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
-    final TField = TextField();
+    final EField = TextFormField(
+              controller: emailController,
+                validator: (input) {
+                        if (input.isEmpty) {
+                          return "Please type an email";
+                        }
+                      },
+                       decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0)
+                          )
+                      )
+
+            );
+    final PField = TextFormField(
+              controller: passwordController,
+                validator: (input) {
+                        if (input.isEmpty) {
+                          return "Please type a password";
+                        }
+                      },
+                       decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0)
+                          )
+                      )
+
+            );
+            
     final LButton = Material(
       elevation: 6.0,
       borderRadius: BorderRadius.circular(10.0),
@@ -20,7 +56,10 @@ class _SignUpPageState extends State<SignUpPage> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: () {
+        signup();
+
+        },
         child: Text("SIGN UP",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 21.0, color: Colors.white)),
@@ -39,8 +78,6 @@ class _SignUpPageState extends State<SignUpPage> {
         )),
       ),
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
       },
     );
 
@@ -134,26 +171,40 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 220.0,
                 ),
                 EmailText,
-                TField,
+                EField,
                 SizedBox(height: 10.0),
-                UNameText,
-                TField,
                 SizedBox(height: 10.0),
                 PassWordText,
-                TField,
+                PField,
                 SizedBox(
                   height: 10.0,
                 ),
                 LButton,
                 SizedBox(
                   height: 10.0,
+                  
                 ),
                 SignUp,
+                
               ],
             ),
           ),
         ),
       ),
     ));
+  }
+  
+void signup() async{
+  
+    FirebaseUser user;
+    try {
+      user = await mAuth.createUserWithEmailAndPassword(
+ 
+          email: emailController.text, password: passwordController.text);
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext)=> MyHomePage()));
+ 
+    }catch(e){
+      print(e.toString());
+    }
   }
 }
