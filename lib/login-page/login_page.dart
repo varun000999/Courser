@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
     final LButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(10.0),
-      color: Colors.purple,
+      color: Colors.deepPurple,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
-    final PassWordText = titleGen("Password", 12.0, Colors.grey, FontWeight.bold);
+    final PassWordText = titleGen("Password", 12.0, FontWeight.bold, Colors.grey);
 
     final SignIn = Align(
       alignment: Alignment.center,
@@ -65,19 +65,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final UNameText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Username",
-          style: TextStyle(
-              color: Colors.grey,
-              fontFamily: "Roboto",
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final UNameText = titleGen("Email", 12.0, FontWeight.bold, Colors.grey);
 
     final Welcome = Align(
       alignment: Alignment.center,
@@ -85,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Text(
           "Welcome to Courser",
           style: TextStyle(
-              color: Colors.purple, fontFamily: "Roboto", fontSize: 21.0),
+              color: Colors.deepPurple, fontFamily: "Roboto", fontSize: 21.0),
         ),
       ),
     );

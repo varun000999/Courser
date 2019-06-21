@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+import 'package:courser/BasicUI/basic_ui.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key, this.title}) : super(key: key);
@@ -44,19 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
       },
     );
 
-    final PassWordText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Password",
-          style: TextStyle(
-              color: Colors.grey,
-              fontFamily: "Roboto",
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final PassWordText = titleGen("Password", 12.0, FontWeight.bold, Colors.grey);
 
     final SignIn = Align(
       alignment: Alignment.center,
@@ -72,19 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
 
-    final UNameText = Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        child: Text(
-          "Username",
-          style: TextStyle(
-              color: Colors.grey,
-              fontFamily: "Roboto",
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
+    final UNameText = titleGen("Username", 12.0, FontWeight.bold, Colors.grey);
 
     final EmailText = Align(
       alignment: Alignment.centerLeft,
