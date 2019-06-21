@@ -15,18 +15,19 @@ class Course {
   int upvCount; //no. of upvotes/likes on course
   int free; //represent boolean value free=1 and paid=0
 
+  //Constructor for Course
   Course(int cid, String cname, String uname, String createdDate, String desc, 
         String type, String link, String platform, int upvCount, int free){
-    this.cid =  cid;  // Unique id of courses
-    this.cname =  cname;  // course name
-    this.uname =  uname;  //user name
-    this.createdDate = createdDate;  //date of creation of course
-    this.desc =  desc;  //description
-    this.type =  type;  //type of course
-    this.link =  link;  //link of course
-    this.platform =  platform;  //platform providing course(like udemy,coursera)
-    this.upvCount =  upvCount;  //no. of upvotes/likes on course
-    this.free =  free; //represent boolean value free=1 and paid=0
+    this.cid =  cid;
+    this.cname =  cname;
+    this.uname =  uname;
+    this.createdDate = createdDate;
+    this.desc =  desc;
+    this.type =  type;
+    this.link =  link;
+    this.platform =  platform;
+    this.upvCount =  upvCount;
+    this.free =  free;
   }
 }
 
@@ -34,6 +35,15 @@ class CourseReview {
   int cid;
   String uname;
   String review;
+
+  //constructor for CourseReview
+  CourseReview(int cid,string uname,string review)
+  {
+    this.cid = cid;  //course id
+    this.uname= uname; //user name
+    this.review= review; //review on course
+  }
+
 }
 
 class User {
