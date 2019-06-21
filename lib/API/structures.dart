@@ -1,5 +1,5 @@
 class Course {
-  int cid;
+  int cid; // Unique id of courses
   String cname;
   String uname;
   String createdDate;
