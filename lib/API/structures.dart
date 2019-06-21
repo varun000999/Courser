@@ -46,15 +46,15 @@ class CourseReview {
 }
 
 class User {
-  int uid;
-  String uname;
-  String doj;
-  List<int> addedCourses;
-  List<int> upvotedCourses;
-  List<int> reviewedCourses;
-  String interest1;
-  String interest2;
-  String interest3;
+  int uid; //user id
+  String uname;  //user name
+  String doj;  //date of joining
+  List<int> addedCourses;  //courses added  by user
+  List<int> upvotedCourses;  //courses upvoted by user
+  List<int> reviewedCourses;  //courses reviewed by user
+  String interest1;  //first interest
+  String interest2;  //second interest
+  String interest3;  //third interest
 
   //constructor User
   User(int uid, String uname, String doj, List<int> addedCourses,
