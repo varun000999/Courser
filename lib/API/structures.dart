@@ -37,7 +37,7 @@ class CourseReview {
   String review;  //review on course
 
   //constructor for CourseReview
-  CourseReview(int cid,string uname,string review)
+  CourseReview(int cid,String uname,String review)
   {
     this.cid = cid;
     this.uname= uname;
