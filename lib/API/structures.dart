@@ -16,32 +16,31 @@ class Course {
   int free; //represent boolean value free=1 and paid=0
 
   //Constructor for Course
-  Course(int cid, String cname, String uname, String createdDate, String desc, 
-        String type, String link, String platform, int upvCount, int free){
-    this.cid =  cid;
-    this.cname =  cname;
-    this.uname =  uname;
+  Course(int cid, String cname, String uname, String createdDate, String desc,
+      String type, String link, String platform, int upvCount, int free) {
+    this.cid = cid;
+    this.cname = cname;
+    this.uname = uname;
     this.createdDate = createdDate;
-    this.desc =  desc;
-    this.type =  type;
-    this.link =  link;
-    this.platform =  platform;
-    this.upvCount =  upvCount;
-    this.free =  free;
+    this.desc = desc;
+    this.type = type;
+    this.link = link;
+    this.platform = platform;
+    this.upvCount = upvCount;
+    this.free = free;
   }
 }
 
 class CourseReview {
   int cid; //course id
   String uname; //user name
-  String review;  //review on course
+  String review; //review on course
 
   //constructor for CourseReview
-  CourseReview(int cid,String uname,String review)
-  {
+  CourseReview(int cid, String uname, String review) {
     this.cid = cid;
-    this.uname= uname;
-    this.review= review;
+    this.uname = uname;
+    this.review = review;
   }
 
 }
@@ -56,4 +55,19 @@ class User {
   String interest1;
   String interest2;
   String interest3;
+
+  //constructor User
+  User(int uid, String uname, String doj, List<int> addedCourses,
+      List<int> upvotedCourses, List<int> reviewedCourses, String interest1,
+      String interest2, String interest3,) {
+        this.uid = uid;
+        this.uname =uname;
+        this.doj =doj;
+        this.addedCourses =addedCourses;
+        this.upvotedCourses =upvotedCourses;
+        this.reviewedCourses =reviewedCourses;
+        this.interest1 =interest1;
+        this.interest2 =interest2;
+        this.interest3 =interest3;
+  }
 }
