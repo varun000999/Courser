@@ -32,16 +32,16 @@ class Course {
 }
 
 class CourseReview {
-  int cid;
-  String uname;
-  String review;
+  int cid; //course id
+  String uname; //user name
+  String review;  //review on course
 
   //constructor for CourseReview
   CourseReview(int cid,string uname,string review)
   {
-    this.cid = cid;  //course id
-    this.uname= uname; //user name
-    this.review= review; //review on course
+    this.cid = cid;
+    this.uname= uname;
+    this.review= review;
   }
 
 }
