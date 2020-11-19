@@ -7,7 +7,7 @@ A search engine for online courses.
 * [Varun Rawat](https://www.github.com/varun000999)  
 * [Amit Chaudhary](https://www.github.com/AMIT317)  
 * [Avnish Pal](https://www.github.com/avnish98)  
-# screenshots
+# Screenshots
 <img align="left" width="250" height="500" src="https://user-images.githubusercontent.com/51327617/99629318-d17eb800-2a5d-11eb-9968-a61db7583f73.png">
 <img align="left" width="250" height="500" src="https://user-images.githubusercontent.com/51327617/99629622-4f42c380-2a5e-11eb-8f3a-330ae6adda89.png">
 <img align="center" width="250" height="500" src="https://user-images.githubusercontent.com/51327617/99629801-a8aaf280-2a5e-11eb-9fd9-e69e45613cac.png">
